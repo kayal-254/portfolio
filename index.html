@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kayalvizhi | Neon Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#0a0a0f,#111,#0a0a0f,#1a0033);
+    background-size:400% 400%;
+    animation:gradientBG 15s ease infinite;
+    color:white;
+    scroll-behavior:smooth;
+}
+
+/* PARTICLES */
+#particles{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+    pointer-events:none;
+}
+
+header, section, footer{
+    position:relative;
+    z-index:1;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+header{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #00f5ff;
+    z-index:1000;
+}
+
+header h2{
+    color:#ff00ff;
+    text-shadow:0 0 15px #ff00ff;
+}
+
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00f5ff;
+    text-shadow:0 0 10px #00f5ff;
+}
+
+section{
+    min-height:100vh;
+    padding:120px 10% 60px;
+}
+
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.hero-image img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:3px solid #ff00ff;
+    box-shadow:0 0 25px #ff00ff;
+    object-fit:cover;
+}
+
+.hero-text h1{
+    font-size:50px;
+}
+
+.hero-text span{
+    color:#00f5ff;
+    text-shadow:0 0 20px #00f5ff;
+}
+
+.typing{
+    margin-top:15px;
+    font-size:20px;
+    color:#ff00ff;
+    height:30px;
+    text-shadow:0 0 10px #ff00ff;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 25px;
+    margin-top:20px;
+    border:2px solid #ff00ff;
+    color:#ff00ff;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff00ff;
+    color:black;
+    box-shadow:0 0 20px #ff00ff;
+}
+
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    margin-top:40px;
+}
+
+.skill-item{
+    width:140px;
+    text-align:center;
+    padding:20px;
+    background:#111;
+    border-radius:15px;
+    border:1px solid #ff00ff;
+    transition:0.3s;
+}
+
+.skill-item i{
+    font-size:40px;
+    color:#00f5ff;
+    margin-bottom:10px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{text-shadow:0 0 5px #00f5ff;}
+    50%{text-shadow:0 0 20px #00f5ff;}
+    100%{text-shadow:0 0 5px #00f5ff;}
+}
+
+.skill-item:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #ff00ff;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#00f5ff;
+    text-shadow:0 0 15px #00f5ff;
+}
+
+.card{
+    background:#111;
+    border:1px solid #00f5ff;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    transition:0.3s;
+    line-height:1.6;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px #00f5ff;
+}
+
+.contact-links a{
+    color:#ff00ff;
+    text-decoration:none;
+    display:block;
+    margin:10px 0;
+    transition:0.3s;
+}
+
+.contact-links a:hover{
+    color:#00f5ff;
+    text-shadow:0 0 10px #00f5ff;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    border-top:1px solid #ff00ff;
+    color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<header>
+    <h2>Kayalvizhi</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#internship">Internship</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-image">
+            <img src="profile.jpeg" alt="Kayalvizhi">
+        </div>
+        <div class="hero-text">
+            <h1>Hello, I'm <span>Kayalvizhi</span></h1>
+            <div class="typing"></div>
+            <a href="resume.pdf" target="_blank" class="btn">Download Resume</a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am a passionate and dedicated developer with strong interest in 
+            Web Development, Java, Python and emerging technologies.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Tech Stack</h2>
+    <div class="skills-container">
+        <div class="skill-item"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="skill-item"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="skill-item"><i class="fab fa-java"></i><p>Java</p></div>
+        <div class="skill-item"><i class="fab fa-python"></i><p>Python</p></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+        <h3>Anti Sleep Alarm</h3>
+        <p>Driver safety device using Python & sensors.</p>
+    </div>
+    <div class="card">
+        <h3>RFID Bike Controller</h3>
+        <p>Smart bike security system using RFID technology for authorized access control.</p>
+    </div>
+</section>
+
+<section id="internship">
+    <h2>Internship</h2>
+    <div class="card">
+        <h3>Web Development Intern</h3>
+        <p>Twilight IT Solutions | 2025</p>
+        <p>Worked on responsive website design using HTML and CSS.</p>
+    </div>
+    <div class="card">
+        <h3>Java Developer Intern</h3>
+        <p>Twilight IT Solutions | 2025</p>
+        <p>Worked on core Java concepts and backend logic development.</p>
+    </div>
+</section>
+
+<section id="certificates">
+    <h2>Certificates</h2>
+    <div class="card">
+        <h3>Python Programming Certification</h3>
+    </div>
+    <div class="card">
+        <h3>UI Path RPA Certification</h3>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+        <a href="mailto:ms.kayalmayakrishnan1225@gmail.com">📧 Email Me</a>
+        <a href="https://linkedin.com/in/kayal-mayakrishnan" target="_blank">🔗 LinkedIn Profile</a>
+        <a href="https://github.com/kayal-254" target="_blank">
+            <i class="fab fa-github"></i> GitHub Profile
+        </a>
+    </div>
+</section>
+
+<footer>
+© 2026 Kayalvizhi 
+</footer>
+
+<script>
+// Typing Effect
+const textArray = ["Frontend Developer 💻","Python Enthusiast 🐍","Future Tech Leader 🚀"];
+let typingElement = document.querySelector(".typing");
+let arrayIndex = 0;
+let charIndex = 0;
+
+function type(){
+    if(charIndex < textArray[arrayIndex].length){
+        typingElement.textContent += textArray[arrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type,100);
+    }else{
+        setTimeout(erase,1500);
+    }
+}
+
+function erase(){
+    if(charIndex > 0){
+        typingElement.textContent = textArray[arrayIndex].substring(0,charIndex-1);
+        charIndex--;
+        setTimeout(erase,50);
+    }else{
+        arrayIndex++;
+        if(arrayIndex >= textArray.length) arrayIndex=0;
+        setTimeout(type,500);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    setTimeout(type,1000);
+});
+
+// Particles Background
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+
+class Particle{
+    constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedY = Math.random() * 0.7 + 0.3;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+    }
+    update(){
+        this.y -= this.speedY;
+        this.x += this.speedX;
+        if(this.y < 0){
+            this.y = canvas.height;
+            this.x = Math.random() * canvas.width;
+        }
+    }
+    draw(){
+        ctx.fillStyle = "#00f5ff";
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = "#ff00ff";
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fill();
+    }
+}
+
+function initParticles(){
+    particlesArray = [];
+    for(let i=0;i<90;i++){
+        particlesArray.push(new Particle());
+    }
+}
+
+function animateParticles(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particlesArray.forEach(p=>{
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animateParticles);
+}
+
+initParticles();
+animateParticles();
+
+window.addEventListener("resize",()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initParticles();
+});
+</script>
+
+</body>
+</html>
